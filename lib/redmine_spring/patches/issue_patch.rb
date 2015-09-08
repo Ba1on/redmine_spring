@@ -7,7 +7,7 @@ module RedmineSpring
 
         base.class_eval do
         unloadable
-        after_save :send_issue_spring_notification
+        before_save :send_issue_spring_notification
         end
 
         def send_issue_spring_notification
