@@ -1,7 +1,6 @@
 module RedmineSpring
   module Patches
     module IssuePatch
-    #include DataSender
 
       def self.included(base)
         base.send :include, DataSender
@@ -12,16 +11,16 @@ module RedmineSpring
         end
 
         def send_issue_spring_notification
-          notification_parameters = { issue_id: id, #если смотреть класс Issue
+          notification_parameters = { issue_id: id, 
                                       issue_subject: subject,
-                                      estimated_hours: estimated_hours, #оценка трудозатрат
+                                      estimated_hours: estimated_hours, 
                                       status: status.name,
                                       object: 'issue'
           }
           send_spring_notification(notification_parameters)
         end
   
-      end #self.included
+      end 
     end
   end
 end

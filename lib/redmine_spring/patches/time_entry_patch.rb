@@ -1,7 +1,6 @@
 module RedmineSpring
   module Patches
     module TimeEntryPatch
-   # include DataSender
 
       def self.included(base)
         base.send :include, DataSender
@@ -22,7 +21,7 @@ module RedmineSpring
           send_spring_notification(notification_parameters)
         end
 
-      end #self.included
+      end 
     end
   end
 end
